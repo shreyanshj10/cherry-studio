@@ -1229,6 +1229,9 @@ export class CacheService {
             const merged = mergeFollowupQueues(existing, incoming)
             this.persistCache.set(persistKey, merged as never)
             this.notifySubscribers(message.key)
+            // The merged value is newer than anything on disk — schedule a save
+            // so a crash does not lose the reconciled queue.
+            this.schedulePersistSave()
             return
           }
         }
