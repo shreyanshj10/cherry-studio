@@ -5245,6 +5245,26 @@
       }
     },
     {
+      "capabilities": ["function-call", "reasoning", "image-recognition", "video-recognition"],
+      "contextWindow": 262144,
+      "id": "ling-3-0-flash-vl",
+      "inputModalities": ["text", "image", "video"],
+      "metadata": {},
+      "name": "inclusionAI: Ling 3.0 Flash VL (free)",
+      "outputModalities": ["text"],
+      "ownedBy": "bailing",
+      "pricing": {
+        "input": {
+          "currency": "USD",
+          "perMillionTokens": 0
+        },
+        "output": {
+          "currency": "USD",
+          "perMillionTokens": 0
+        }
+      }
+    },
+    {
       "capabilities": ["reasoning"],
       "contextWindow": 128000,
       "family": "ring",
@@ -7636,10 +7656,6 @@
       "outputModalities": ["text"],
       "ownedBy": "deepseek",
       "pricing": {
-        "cacheRead": {
-          "currency": "USD",
-          "perMillionTokens": 0.028
-        },
         "input": {
           "currency": "USD",
           "perMillionTokens": 0.27
@@ -7724,15 +7740,22 @@
       }
     },
     {
-      "capabilities": ["function-call", "reasoning", "image-recognition", "structured-output"],
+      "capabilities": ["function-call", "reasoning", "image-recognition", "structured-output", "file-input"],
       "contextWindow": 1048576,
+      "family": "deepseek-flash",
       "id": "deepseek-v4-1-flash",
       "inputModalities": ["text", "image"],
+      "maxOutputTokens": 393216,
       "metadata": {},
-      "name": "DeepSeek: DeepSeek V4.1 Flash",
+      "name": "DeepSeek V4.1 Flash",
+      "openWeights": true,
       "outputModalities": ["text"],
       "ownedBy": "deepseek",
       "pricing": {
+        "cacheRead": {
+          "currency": "USD",
+          "perMillionTokens": 0.006
+        },
         "input": {
           "currency": "USD",
           "perMillionTokens": 0.3
@@ -7740,41 +7763,6 @@
         "output": {
           "currency": "USD",
           "perMillionTokens": 1.2
-        }
-      },
-      "reasoning": {
-        "controls": [
-          {
-            "kind": "effort",
-            "values": ["none", "low", "high", "max"]
-          }
-        ],
-        "supportedEfforts": ["none", "low", "high", "max"]
-      }
-    },
-    {
-      "capabilities": ["function-call", "reasoning", "image-recognition", "file-input"],
-      "contextWindow": 1000000,
-      "family": "deepseek",
-      "id": "deepseek-v4-1-flash-beta",
-      "inputModalities": ["text", "image"],
-      "maxOutputTokens": 384000,
-      "metadata": {},
-      "name": "DeepSeek V4.1 Flash Beta",
-      "outputModalities": ["text"],
-      "ownedBy": "deepseek",
-      "pricing": {
-        "cacheRead": {
-          "currency": "USD",
-          "perMillionTokens": 0.007
-        },
-        "input": {
-          "currency": "USD",
-          "perMillionTokens": 0.22
-        },
-        "output": {
-          "currency": "USD",
-          "perMillionTokens": 0.66
         }
       },
       "reasoning": {
@@ -12039,7 +12027,7 @@
       "id": "mai-image-2-5",
       "inputModalities": ["text", "image"],
       "metadata": {},
-      "name": "MicrosoftAI: MAI-Image-2.5",
+      "name": "Microsoft AI: MAI-Image-2.5",
       "outputModalities": ["image"],
       "ownedBy": "microsoft"
     },
@@ -12048,7 +12036,7 @@
       "id": "mai-image-2-5-pro",
       "inputModalities": ["text", "image"],
       "metadata": {},
-      "name": "MicrosoftAI: MAI-Image-2.5 Pro",
+      "name": "Microsoft AI: MAI-Image-2.5 Pro",
       "outputModalities": ["image"],
       "ownedBy": "microsoft"
     },
@@ -12057,7 +12045,7 @@
       "id": "mai-image-2-6",
       "inputModalities": ["text", "image"],
       "metadata": {},
-      "name": "MicrosoftAI: MAI-Image-2.6",
+      "name": "Microsoft AI: MAI-Image-2.6",
       "outputModalities": ["image"],
       "ownedBy": "microsoft"
     },
@@ -12066,7 +12054,7 @@
       "id": "mai-image-2-6-flash",
       "inputModalities": ["text", "image"],
       "metadata": {},
-      "name": "MicrosoftAI: MAI-Image-2.6 Flash",
+      "name": "Microsoft AI: MAI-Image-2.6 Flash",
       "outputModalities": ["image"],
       "ownedBy": "microsoft"
     },
@@ -20293,14 +20281,14 @@
       "ownedBy": "xai"
     },
     {
-      "capabilities": ["function-call", "reasoning", "image-recognition", "file-input"],
+      "capabilities": ["function-call", "reasoning", "image-recognition", "structured-output", "file-input"],
       "contextWindow": 1000000,
       "family": "grok",
       "id": "grok-4-1-fast",
       "inputModalities": ["text", "image"],
       "maxOutputTokens": 1000000,
       "metadata": {},
-      "name": "Grok 4.1 Fast Reasoning",
+      "name": "Grok 4.1 Fast (Reasoning)",
       "outputModalities": ["text"],
       "ownedBy": "xai",
       "pricing": {
@@ -20319,14 +20307,14 @@
       }
     },
     {
-      "capabilities": ["function-call", "image-recognition", "file-input"],
+      "capabilities": ["function-call", "image-recognition", "structured-output", "file-input"],
       "contextWindow": 1000000,
       "family": "grok",
       "id": "grok-4-1-fast-non-reasoning",
       "inputModalities": ["text", "image"],
       "maxOutputTokens": 1000000,
       "metadata": {},
-      "name": "Grok 4.1 Fast Non-Reasoning",
+      "name": "Grok 4.1 Fast",
       "outputModalities": ["text"],
       "ownedBy": "xai",
       "pricing": {
@@ -20352,7 +20340,7 @@
       "inputModalities": ["text", "image"],
       "maxOutputTokens": 2000000,
       "metadata": {},
-      "name": "Grok 4.20 Reasoning",
+      "name": "Grok 4.20 (Reasoning)",
       "outputModalities": ["text"],
       "ownedBy": "xai",
       "pricing": {
@@ -20458,14 +20446,14 @@
       }
     },
     {
-      "capabilities": ["function-call", "image-recognition", "file-input"],
+      "capabilities": ["function-call", "image-recognition", "structured-output", "file-input"],
       "contextWindow": 2000000,
       "family": "grok",
       "id": "grok-4-20-non-reasoning",
       "inputModalities": ["text", "image"],
       "maxOutputTokens": 2000000,
       "metadata": {},
-      "name": "Grok 4.20 Non-Reasoning",
+      "name": "Grok 4.20 (Non-Reasoning)",
       "outputModalities": ["text"],
       "ownedBy": "xai",
       "pricing": {
@@ -20607,7 +20595,7 @@
     },
     {
       "capabilities": ["function-call", "reasoning", "image-recognition", "structured-output", "file-input"],
-      "contextWindow": 500000,
+      "contextWindow": 524288,
       "family": "grok",
       "id": "grok-4-6",
       "inputModalities": ["text", "image"],
@@ -21412,7 +21400,7 @@
     },
     {
       "capabilities": ["function-call", "reasoning", "structured-output"],
-      "contextWindow": 202752,
+      "contextWindow": 200000,
       "family": "glm-flash",
       "id": "glm-4-7-flash",
       "inputModalities": ["text"],
@@ -22057,11 +22045,11 @@
       "pricing": {
         "input": {
           "currency": "USD",
-          "perMillionTokens": 1.085
+          "perMillionTokens": 0.7
         },
         "output": {
           "currency": "USD",
-          "perMillionTokens": 3.41
+          "perMillionTokens": 2.2
         }
       }
     },
@@ -22098,5 +22086,5 @@
       "ownedBy": "zhipu"
     }
   ],
-  "version": "eb94bb51fd08a3eb"
+  "version": "15ed6905f15dbd4b"
 }
